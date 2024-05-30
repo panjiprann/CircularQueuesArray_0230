@@ -17,6 +17,7 @@ class Queues {
             int num;
             cout << "Enter a number: ";
             cin >> num;
+            cout << endl;
 
             // Cek apakah antrian penuh
             if ((FRONT == 0 && REAR == max - 1) || (FRONT == REAR + 1)) {
@@ -39,5 +40,10 @@ class Queues {
             queue_array[REAR] = num;
         }
 
+        void remove() {
+            // Cek apakah antrian kosong
+            if (FRONT == -1) {
+        }
 
-}
+
+};
