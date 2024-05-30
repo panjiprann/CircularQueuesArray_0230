@@ -60,8 +60,7 @@ class Queues {
                 else
                     FRONT = FRONT + 1;
             }
-        
-    }
+        }
 
     void display() {
 
@@ -82,14 +81,11 @@ class Queues {
                 cout << queue_array[FRONT_Position] << "\n";
                 FRONT_Position++;
             }
-
-            FRONT_Position = 0;
-        }
-        cout << endl;
+             cout << endl;
     }
     else {
         //jika FRONT > REAR, iterasi dari FRONT hingga akhir array
-        while (FROBT_Position <= max - 1) {
+        while (FRONT_Position <= max - 1) {
             cout << queue_array[FRONT_Position] << " ";
             FRONT_Position++;
         }
@@ -102,6 +98,50 @@ class Queues {
             FRONT_Position++;
         }
         cout << endl;
+      }
     }
 };
 
+int main() {
+    Queues q;
+    char ch;
+
+    while (true) {
+        try {
+            cout << "Menu" << endl;
+            cout << "1. Implement insert operation" << endl;
+            cout << "2. Implement deleted operation" << endl;
+            cout << "3 Display values" << endl;
+            cout << "4. Exit" << endl;
+            cout << "Enter your choice (1-4): ";
+            cin >> ch;
+            cout << endl;
+
+            switch (ch) {
+                case '1': {
+                    q.insert();
+                    break;
+                }
+                case '2': {
+                    q.remove();
+                    break;
+                }
+                case '3': {
+                    q.display();
+                    break;
+                }
+                case '4' : {
+                    return 0;
+                }
+                default: {
+                    cout << "Invalid option!!" << endl;
+                    break;
+                }
+            }
+        }
+        catch (exception& e) {
+            cout << "Check for the values entered." << endl;
+        }
+    }
+    return 0;
+}
