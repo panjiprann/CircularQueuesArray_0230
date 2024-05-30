@@ -60,7 +60,12 @@ class Queues {
                 else
                     FRONT = FRONT + 1;
             }
-        }
+    }
+
+    void display() {
+        
+    }
+
 
 
 };
